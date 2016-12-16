@@ -1,15 +1,20 @@
-# Git Definitions updated again!!!!
+# Git Definitions
 
 **Instructions: ** Define each of the following Git concepts.
 
 * What is version control?  Why is it useful?
-verison control is a means to record changes. It is useful because it can create or update multiple projects from a single base code, and it can also allow the return to a previous state which is useful for debugging. 
+
+Version control is a computer system which manages files and the changes made to those files.  It allows other people to safely make changes to files, and gives the creator of the repository the ability to implement any changes they like.  It also keeps track of any changes made, so if a change breaks the code, you can easily revert back to the last working state.
 
 * What is a branch and why would you use one?
-A branch is a sub-file/folder that is based off of a master code, where the master code can be worked on without affecting the master code itself. This allows for multiple users with multiple branchs, all working with a common goal, but ideally on different problems. I would use a branch when working on new code, so as to not tamper with what i know already works.
+
+A branch is a safe working copy of a repository.  Creating a branch allows you to make changes without affecting the current applied version of the code.  If you feel like your changes are good and ready to be implemented in the main version, you can merge the branch back into the main one.
 
 * What is a commit? What makes a good commit message?
-When a file has changed, it needs to be added and then commited as a saving point. A good commit message would briefly describe the changes to the file.
+
+A commit is the act of actually including your code in the local repository.  A good commit message is concise, and describes the changes or additions you made so the maintainer can easily understand what is to be implemented.
+
 
 * What is a merge conflict?
-A merge conflict is the merge of multiple branchs, and a reconciliation is required to address the differences of the multiple branchs. Conflict markers will identify the differences. 
+
+A merge conflict is when a file in a branch has been edited in different ways, and git doesn't know which change to accept.  Git will 'highlight' the differences in the conflicted file, and the user will need to decide which version of the conflict to keep. 
