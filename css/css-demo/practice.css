@@ -1,0 +1,26 @@
+ 
+section#contact-info{
+    font-size: .8em;
+
+}
+
+.job{
+    background-color: #e9e5dc ;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px 5px 5px 5px;
+    height: 50%;
+    width: 50%;
+}
+
+.size{
+    font-size: .8em;
+}
+
+
+p:hover {
+   color: green;
+}
+
+ul > li {
+    color: blue;
+}
