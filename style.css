@@ -1,0 +1,78 @@
+body{
+	background:
+	black;
+}
+
+div {
+	margin: 10px;
+}
+
+img.go {
+	padding: 25px;
+	border: 100px;
+	border-style: solid;
+	color: #BC8F8F;
+}
+
+.p1 {
+	color: #BDB76B;
+	font-style:oblique;
+	font-size: 15px;
+}
+
+#gokgs {
+	color: green;
+}
+
+.title {
+	color:white;
+}
+
+#title{
+	color:#F5DEB3;
+}
+.links{
+	color:blue;
+}
+
+em{
+	color: 	#66CDAA;
+	font-size: 20px;
+}
+
+.list{
+	color:blue;
+}
+
+.form{
+	color:white;
+}
+
+.divide{
+	color: #191970;
+}
+
+img.alpha{
+	display: block;
+	z-index: 0;
+	margin-left: auto;
+	margin-right:auto;
+	bottom:-900px;
+	border: 5px;
+	border-style: solid;
+	border-color: #FFD700; 
+}
+
+.future{
+	position: relative;
+	z-index: 1;
+	top: -160px;
+	left: 37%;
+	color: #1E90FF;
+	font-size: 20px;
+}
+
+a:visited{
+	color:gray;
+}
+
