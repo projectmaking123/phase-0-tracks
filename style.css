@@ -1,7 +1,4 @@
-body{
-	background:
-	black;
-}
+
 
 div {
 	margin: 10px;
@@ -25,7 +22,7 @@ img.go {
 }
 
 .title {
-	color:white;
+	color:black;
 }
 
 #title{
@@ -45,7 +42,7 @@ em{
 }
 
 .form{
-	color:white;
+	color:black;
 }
 
 .divide{
@@ -76,3 +73,8 @@ a:visited{
 	color:gray;
 }
 
+@media screen and  (max-width: 500px) {
+  img {
+  width:100%; 
+  }
+}
