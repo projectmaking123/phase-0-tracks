@@ -1,0 +1,43 @@
+.column-1 {
+  display: inline-block;
+  width: 48%;
+  font-family: Lucida Console;
+  vertical-align: top;
+  background-color:green; 
+  padding-left: 5px;
+
+} 
+
+a:hover{
+  color: gray;
+}
+
+.column-2 {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+  padding: 5px;
+  background-color: red;
+   font-family: Lucida Console;
+}
+
+Header {
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+  padding: 10px;
+  background-image: url(http://xaharts.org/funny/i/gitopuss/github-octocat_yes-we-code.jpg);
+  background-size: 80px 70px;
+  background-position: top right;
+  background-repeat: no-repeat;
+} 
+
+footer {
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+  padding: 10px;
+  float: none;
+  position: absolute;
+  width: 100%;
+}
