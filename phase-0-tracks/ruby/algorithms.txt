@@ -1,0 +1,21 @@
+Elevator Robot:
+
+The number of floors of this building is 0..40
+-When the floor button is pressed
+-Loop through each floor index to determine the inputed index
+-If the length is positive, go up
+-Else go down
+-Go to the indexed floor that matched the input, by moving by the index difference.
+-Until index is reached, display the current index
+-Once index is reached, stop movement and open doors.
+
+
+Taking the Subway
+
+-Home is variable A, the Subway is variable B, and the destination is variable C
+-Map the distance between A and B.
+-Move in the direction of B until distance is 0.
+-While the distance of B to C is greater than 0
+-index through every element until the distance to C is 0.
+-Once the distance is 0, stop and display destination reached. 
+
