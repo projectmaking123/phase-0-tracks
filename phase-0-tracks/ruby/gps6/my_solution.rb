@@ -1,10 +1,10 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Stephen Wurster].
+# We spent [2] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+#allows access to functions and methods of other file
 #
 require_relative 'state_data'
 
