@@ -36,4 +36,8 @@ function objectSearch(ob1, ob2){
 } 
 a = {nae: "Steven", ge: 54}
 b = {name: "Steven", age: 54}
-console.log(objectSearch(a, b));
+console.log(objectSearch(a, b))
+
+c = {name: "Steven", age: 54}
+d = {name: "Steven", age: 24}
+console.log(objectSearch(c, d))
