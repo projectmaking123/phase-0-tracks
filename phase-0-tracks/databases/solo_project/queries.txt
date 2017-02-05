@@ -1,0 +1,105 @@
+Enter ".help" for usage hints.
+sqlite> create table citizens (ID integer primary key, name varchar(255), snow_height int, foreign key (boroughs_id) references boroughs(id));
+Error: unknown column "boroughs_id" in foreign key definition
+sqlite> .tables
+sqlite> create table boroughs (id integer primary key, boro_name varchar(255), clear_streets boolean, enough_salt boolean);
+sqlite> .tables
+boroughs
+sqlite> create table survey (name varchar(255), snow_height int, boro_id int, foreign key(boro_id) references boroughs(id));
+sqlite> .tables
+boroughs  survey
+sqlite> insert into boroughs (boro_name, clear_streets, enough_salt) values ("Queens", "true", "true");
+sqlite> insert into boroughs (boro_name, clear_streets, enough_salt) values ("Manhattan", "true", "true");
+sqlite> insert into boroughs (boro_name, clear_streets, enough_salt) values ("Brooklyn", "true", "false");
+sqlite> insert into boroughs (boro_name, clear_streets, enough_salt) values ("Bronx", "false", "false");
+sqlite> insert into boroughs (boro_name, clear_streets, enough_salt) values ("Staten Island", "false", "false");
+sqlite> insert into survey (name, snow_height, boro_id) values ("Joe", 4, 1);
+sqlite> insert into survey (name, snow_height, boro_id) values ("Charles", 2, 2);
+sqlite> insert into survey (name, snow_height, boro_id) values ("Zac", 6, 3);
+sqlite> insert into survey (name, snow_height, boro_id) values ("Sam", 8, 4);
+sqlite> insert into survey (name, snow_height, boro_id) values ("Jesse", 10, 5);
+
+sqlite> select * from survey;
+Joe|4|1
+Charles|2|2
+Zac|6|3
+Sam|8|4
+Jesse|10|5
+sqlite> select * from boroughs;
+1|Queens|true|true
+2|Manhattan|true|true
+3|Brooklyn|true|false
+4|Bronx|false|false
+5|Staten Island|false|false
+
+sqlite> update boroughs set enough_salt="true" where boro_name="Bronx";
+sqlite> select * from boroughs;
+1|Queens|true|true
+2|Manhattan|true|true
+3|Brooklyn|true|false
+4|Bronx|false|true
+5|Staten Island|false|false
+
+sqlite> select * from boroughs, survey;
+1|Queens|true|true|Joe|4|1
+1|Queens|true|true|Charles|2|2
+1|Queens|true|true|Zac|6|3
+1|Queens|true|true|Sam|8|4
+1|Queens|true|true|Jesse|10|5
+2|Manhattan|true|true|Joe|4|1
+2|Manhattan|true|true|Charles|2|2
+2|Manhattan|true|true|Zac|6|3
+2|Manhattan|true|true|Sam|8|4
+2|Manhattan|true|true|Jesse|10|5
+3|Brooklyn|true|false|Joe|4|1
+3|Brooklyn|true|false|Charles|2|2
+3|Brooklyn|true|false|Zac|6|3
+3|Brooklyn|true|false|Sam|8|4
+3|Brooklyn|true|false|Jesse|10|5
+4|Bronx|false|true|Joe|4|1
+4|Bronx|false|true|Charles|2|2
+4|Bronx|false|true|Zac|6|3
+4|Bronx|false|true|Sam|8|4
+4|Bronx|false|true|Jesse|10|5
+5|Staten Island|false|false|Joe|4|1
+5|Staten Island|false|false|Charles|2|2
+5|Staten Island|false|false|Zac|6|3
+5|Staten Island|false|false|Sam|8|4
+5|Staten Island|false|false|Jesse|10|5
+
+sqlite> select * from boroughs, survey where survey.boro_id = boroughs.id;
+1|Queens|true|true|Joe|4|1
+2|Manhattan|true|true|Charles|2|2
+3|Brooklyn|true|false|Zac|6|3
+4|Bronx|false|true|Sam|8|4
+5|Staten Island|false|false|Jesse|10|5
+
+sqlite> delete from survey where snow_height>5;
+sqlite> select * from survey;
+Joe|4|1
+Charles|2|2
+
+sqlite> select * from boroughs cross join survey
+   ...> ;
+1|Queens|true|true|Joe|4|1
+1|Queens|true|true|Charles|2|2
+2|Manhattan|true|true|Joe|4|1
+2|Manhattan|true|true|Charles|2|2
+3|Brooklyn|true|false|Joe|4|1
+3|Brooklyn|true|false|Charles|2|2
+4|Bronx|false|true|Joe|4|1
+4|Bronx|false|true|Charles|2|2
+5|Staten Island|false|false|Joe|4|1
+5|Staten Island|false|false|Charles|2|2
+
+sqlite> select * from boroughs natural join survey;
+1|Queens|true|true|Joe|4|1
+1|Queens|true|true|Charles|2|2
+2|Manhattan|true|true|Joe|4|1
+2|Manhattan|true|true|Charles|2|2
+3|Brooklyn|true|false|Joe|4|1
+3|Brooklyn|true|false|Charles|2|2
+4|Bronx|false|true|Joe|4|1
+4|Bronx|false|true|Charles|2|2
+5|Staten Island|false|false|Joe|4|1
+5|Staten Island|false|false|Charles|2|2
