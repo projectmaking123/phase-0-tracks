@@ -1,6 +1,7 @@
 # require gems
 require 'sinatra'
 require 'sqlite3'
+require 'sinatra/reloader' if development?
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 
@@ -17,11 +18,29 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/students/age' do
+	erb :age
+end
+
+get 'students/age_print' do
+	# @ages = db.execute("SELECT * FROM students")
+	@ages = params[data]
+	erb :age_print
+end
+
 # create new students via
 # a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
 end
+
+post '/students/age_search' do
+
+	data = db.execute("SELECT * FROM students WHERE age=?", [params['age'].to_i])	
+	
+	redirect '/age_print'
+end
+
 
 # add static resources
