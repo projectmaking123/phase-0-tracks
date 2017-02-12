@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+<body>
+
+<div id="test1">
+<h1>
+	Stuff
+	</h1>
+
+	<h2>
+		Things
+	</h2>
+
+	<p id="p1">
+		Writing stuff here
+	</p>
+
+	<a href="#">This goes nowhere</a>
+	<button>Click this</button>
+</div>
+
+<script type="text/javascript">
+	$("document").ready(function(){
+
+	$("#test1").css("width", 500);
+	$("#test1").css("margin", "auto");
+	$("#p1").css("color", "red");
+	$("#p1").css("fontSize", 40);
+	$("a").css("color", "blue");
+
+    $("#p1").click(function(){
+        $(this).replaceWith('<p> New p </p>')
+    	});
+
+    $("a").click(function(){
+    	$("h1").remove();
+    });
+    $("h2").hover(function(){
+    	$(this).css("color", "green");
+    }, function(){
+    	$(this).css("color", "orange");
+    });
+});
+
+</script>
+</body>
+</html>
